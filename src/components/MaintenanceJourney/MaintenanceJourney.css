@@ -1,0 +1,138 @@
+.maintenance-journey {
+  padding: 8rem 2rem;
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.heading-secondary {
+  color: var(--color-text);
+}
+
+.journey-stages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-stage {
+  width: 100%;
+  max-width: 400px;
+  opacity: 0;
+}
+
+.stage-card {
+  padding: 2.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stage-title {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.stage-description {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Stage States */
+.stage-dimmed .stage-card {
+  border-color: var(--color-border);
+  opacity: 0.7;
+}
+.stage-dimmed .stage-title {
+  color: var(--color-text-dim);
+}
+
+.stage-medium .stage-card {
+  border-color: var(--color-text-dim);
+}
+.stage-medium .stage-title {
+  color: var(--color-text-secondary);
+}
+
+.stage-highlight .stage-card {
+  border-color: var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+  background-color: var(--color-accent-dim);
+  box-shadow: none;
+}
+.stage-highlight .stage-title {
+  color: var(--color-accent);
+}
+
+.journey-arrow {
+  color: var(--color-text-dim);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey-arrow svg {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 768px) {
+  .journey-stages {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  
+  .journey-arrow {
+    flex-shrink: 0;
+  }
+  
+  .journey-arrow svg {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .maintenance-journey {
+    padding: 4rem 1rem;
+  }
+  .journey-header {
+    margin-bottom: 2.5rem;
+  }
+  .stage-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

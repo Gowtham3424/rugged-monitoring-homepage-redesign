@@ -1,0 +1,229 @@
+.asset-dashboard-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+}
+
+.asset-dashboard-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.dashboard-heading {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.dashboard-interface {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.dashboard-interface.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.topbar-logo {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.topbar-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-normal);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-normal);
+  border-radius: 50%;
+}
+
+.topbar-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+.asset-identifier {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.metric-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.metric-value.risk-low {
+  color: var(--color-normal);
+}
+
+.chart-container {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.chart-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  margin-bottom: 1.5rem;
+}
+
+.trend-chart {
+  width: 100%;
+  height: 200px;
+  overflow: visible;
+}
+
+.grid-line {
+  stroke: var(--color-border);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.grid-label {
+  fill: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.trend-line {
+  stroke: var(--color-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dashoffset 2s ease-out;
+}
+
+.data-point {
+  fill: #FFFFFF;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.data-point:hover {
+  fill: var(--color-accent);
+  r: 6;
+}
+
+.tooltip-text {
+  fill: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  background-color: var(--color-bg-alt);
+}
+
+.data-point-group:hover .tooltip-text {
+  opacity: 1;
+}
+
+.dashboard-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .metric-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-heading {
+    font-size: 1.75rem;
+  }
+
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .asset-dashboard-section {
+    padding: 4rem 1rem;
+  }
+
+  .dashboard-content {
+    padding: 1.25rem;
+  }
+}
+
+.time-label {
+  fill: var(--color-text-dim);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+

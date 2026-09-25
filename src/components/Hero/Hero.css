@@ -1,0 +1,261 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 100px; /* Space for header */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero__headline {
+  font-family: var(--font-body);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.03em;
+}
+
+.hero__headline-accent {
+  color: var(--color-accent);
+}
+
+.hero__support {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 0 2.5rem 0;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.hero__card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
+  z-index: 10;
+  font-family: var(--font-mono);
+}
+
+.hero__card--rm-eye {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero__card-eyebrow {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.05em;
+}
+
+.hero__card-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.hero__card-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-normal);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot--normal {
+  background-color: var(--color-normal);
+}
+
+.hero__svg-wrapper {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+}
+
+.transformer-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.svg-tank {
+  fill: none;
+  stroke: #17202A;
+  stroke-width: 2;
+}
+
+.svg-fins line, .svg-fin-bar {
+  stroke: var(--color-text);
+  stroke-width: 2;
+}
+
+.svg-bushings line, .svg-bushings circle {
+  stroke: #17202A;
+  stroke-width: 2;
+  fill: transparent;
+}
+
+.svg-connector {
+  stroke: var(--color-border);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  fill: transparent;
+}
+
+.svg-structure {
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+.svg-sensors circle {
+  fill: #FFFFFF;
+  stroke: var(--color-accent);
+  stroke-width: 2;
+}
+
+.label-title {
+  fill: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.svg-pulses circle {
+  fill: var(--color-accent);
+}
+
+.pulse {
+  animation: sensorPulse 4s infinite linear;
+}
+
+.pulse-1 { animation-delay: 0s; }
+.pulse-2 { animation-delay: 1.3s; }
+.pulse-3 { animation-delay: 2.6s; }
+
+@keyframes sensorPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+.hero__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.hero__divider-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+}
+
+.hero__divider-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+@media (min-width: 430px) {
+  .hero__actions {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 991px) {
+  .hero__card {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 1.5rem;
+    align-self: center;
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .hero__visual {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero__container {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .hero__content {
+    flex: 0 0 55%;
+    padding-right: 2rem;
+  }
+  
+  .hero__visual {
+    flex: 0 0 45%;
+    margin-top: 0;
+  }
+  
+  .hero__card {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .svg-label--optional,
+  .svg-connector--optional {
+    display: none;
+  }
+}

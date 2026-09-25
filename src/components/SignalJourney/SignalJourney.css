@@ -1,0 +1,211 @@
+.signal-section {
+  padding: 6rem 0;
+  background-color: #123A63; /* Deep navy */
+  color: #FFFFFF;
+  min-height: 200vh; /* Allow scrolling to trigger progress */
+  position: relative;
+}
+
+.signal-section .section-heading {
+  color: #FFFFFF;
+}
+
+.signal-section .eyebrow {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.signal-section .container {
+  position: sticky;
+  top: 20vh;
+}
+
+.journey-container {
+  position: relative;
+  margin-top: 6rem;
+}
+
+/* Desktop */
+.desktop-journey {
+  display: block;
+}
+
+.journey-path {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.journey-path .path-bg {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 2;
+}
+
+.journey-path .path-fill {
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.journey-nodes {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18%;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.journey-node.active {
+  opacity: 1;
+}
+
+.node-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+}
+
+.journey-node.active .node-marker,
+.journey-node-vert.active .node-marker {
+  border-color: #FFFFFF;
+}
+
+.journey-node.current .node-marker,
+.journey-node-vert.current .node-marker {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.node-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.journey-node.active .node-number,
+.journey-node-vert.active .node-number {
+  color: #FFFFFF;
+}
+
+.node-content {
+  text-align: center;
+}
+
+.node-label {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.node-sublabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #6BA3D6;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.node-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+/* Mobile */
+.mobile-journey {
+  display: none;
+}
+
+.journey-path-vertical {
+  position: absolute;
+  top: 0;
+  left: 15px; /* Adjust left to align with marker center (35/2 = 17.5 roughly) */
+  width: 50px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.journey-path-vertical .path-bg {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 2;
+}
+
+.journey-path-vertical .path-fill {
+  stroke: #FFFFFF;
+  stroke-width: 2;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.journey-nodes-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-node-vert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+
+.journey-node-vert.active {
+  opacity: 1;
+}
+
+.journey-node-vert .node-marker {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.journey-node-vert .node-content {
+  text-align: left;
+  padding-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .signal-section {
+    min-height: auto;
+    padding: 5rem 0;
+  }
+
+  .signal-section .container {
+    position: static;
+  }
+
+  .desktop-journey {
+    display: none;
+  }
+
+  .mobile-journey {
+    display: block;
+    margin-top: 3rem;
+  }
+}

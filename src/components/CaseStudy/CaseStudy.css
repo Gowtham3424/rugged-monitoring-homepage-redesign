@@ -1,0 +1,140 @@
+.case-study {
+  padding: 8rem 2rem;
+  background-color: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.case-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  opacity: 0;
+}
+
+.case-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+}
+
+.step-node {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.step-content {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  flex: 1;
+}
+
+.step-label {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.step-desc {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.step-connector {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 1px;
+  height: calc(100% + 2rem - 40px);
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.case-footer {
+  text-align: center;
+  opacity: 0;
+}
+
+.btn--ghost {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+}
+
+.btn--ghost:hover {
+  color: var(--color-accent-secondary);
+}
+
+@media (min-width: 992px) {
+  .case-timeline {
+    flex-direction: row;
+    gap: 0;
+  }
+  
+  .timeline-step {
+    flex: 1;
+    padding: 0 1rem;
+  }
+  
+  .step-connector {
+    top: 20px;
+    left: calc(20px + 1rem); /* offset by node center + padding */
+    width: calc(100% - 40px);
+    height: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-study {
+    padding: 4rem 1rem;
+  }
+  .case-header {
+    margin-bottom: 2.5rem;
+  }
+  .step-content {
+    padding: 1.25rem;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
